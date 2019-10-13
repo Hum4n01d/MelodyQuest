@@ -7,6 +7,8 @@ const midifreq = require('midi-freq')
 const TitleScreen = require('./scenes/TitleScreen')
 const Battle = require('./scenes/Battle')
 const Win = require('./scenes/Win')
+const WorldMap = require('./scenes/WorldMap')
+const WorldMapTwo = require('./scenes/WorldMapTwo')
 const store = require('./store')
 
 const KEY_DOWN = 144
@@ -34,7 +36,7 @@ const menuMusic = new Pizzicato.Sound({
   source: 'file',
   options: {
     path: '/resources/music/menu.wav',
-    volume: 0.79
+    volume: 0.59
   }
 })
 
@@ -69,6 +71,8 @@ document.getElementById('startGameButton').onclick = () => {
 const titleScreen = new TitleScreen()
 const battle = new Battle()
 const win = new Win()
+const worldMap = new WorldMap()
+const worldMapTwo = new WorldMapTwo()
 
 function doFrame() {
   const { isFirstFrame, ctx, scene, previousScene, songID, previousSongID, volume } = store.getState()
@@ -96,6 +100,7 @@ function doFrame() {
       case 1:
         battleMusic.play()
         battleDefendMusic.stop()
+        menuMusic.stop()
         break
       case 2:
         battleDefendMusic.play()
@@ -134,6 +139,12 @@ function doFrame() {
     case 2:
       win.doFrame()
       break
+    case 3:
+      worldMap.doFrame()
+      break
+    case 4:
+      worldMapTwo.doFrame()
+      break
   }
 
   if (isFirstFrame) {
@@ -162,7 +173,9 @@ function startGame() {
   Promise.all([
     titleScreen.loadResources(), 
     battle.loadResources(),
-    win.loadResources()
+    win.loadResources(),
+    worldMap.loadResources(),
+    worldMapTwo.loadResources()
   ]).then(() => {
     navigator.requestMIDIAccess({ sysex: false }).then(midiAccess => {
       console.log(midiAccess)

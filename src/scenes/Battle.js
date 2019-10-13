@@ -104,7 +104,7 @@ Battle.prototype.doFrame = function() {
         }
 
         if (this.message.currentTexture === 5) {
-          store.updateState({ scene: 2 })
+          store.updateState({ scene: 4 })
         }
       }
     }

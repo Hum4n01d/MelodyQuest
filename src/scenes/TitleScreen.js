@@ -34,7 +34,7 @@ TitleScreen.prototype.doFrame = function() {
   }
 
   if (note) {
-    store.updateState({ scene: 1 })
+    store.updateState({ scene: 3 })
 
     return
   }

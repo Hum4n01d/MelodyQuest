@@ -9,10 +9,6 @@ function Win() {
 Win.prototype.doFrame = function() {
   const { isFirstFrame, note } = store.getState()
 
-  if (isFirstFrame) {
-    store.updateState({ songID: 5 })
-  }
-
   // Draw
   this.thanksForPlayingText.draw()
 }

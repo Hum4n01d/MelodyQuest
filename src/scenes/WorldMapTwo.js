@@ -1,16 +1,16 @@
 const GameObject = require('../shared/GameObject')
 const store = require('../store')
 
-function WorldMap() {
+function WorldMapTwo() {
   // Static objects
   this.background = new GameObject(0, 0, ['/resources/backgrounds/path.png'])
 
-  this.player = new GameObject(116, 175, ['/resources/characters/player.png'])
+  this.player = new GameObject(116, 85, ['/resources/characters/player.png'])
   this.tree = new GameObject(0, 0, ['/resources/backgrounds/tree.png'])
   this.frames = 0
 }
 
-WorldMap.prototype.doFrame = function() {
+WorldMapTwo.prototype.doFrame = function() {
   const { isFirstFrame, note } = store.getState()
 
   // Update
@@ -18,23 +18,22 @@ WorldMap.prototype.doFrame = function() {
     store.updateState({ songID: 5 })
   }
 
-  if (this.player.y > 95) {
+  if (this.player.y > 35) {
     this.player.y -= 1
   }
 
   this.frames++
 
   if (this.frames > 100) {
-    store.updateState({ scene: 1 })
+    store.updateState({ scene: 2 })
   }
   
   // Draw
   this.background.draw()
-  this.tree.draw()
   this.player.draw()
 }
 
-WorldMap.prototype.loadResources = function() {
+WorldMapTwo.prototype.loadResources = function() {
   let promises = []
   promises.push(this.background.load())
   promises.push(this.player.load())
@@ -43,4 +42,4 @@ WorldMap.prototype.loadResources = function() {
   return Promise.all(promises)
 }
 
-module.exports = WorldMap
+module.exports = WorldMapTwo
