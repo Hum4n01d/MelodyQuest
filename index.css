@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "PixelOperator-Bold";
+  src: url("/resources/fonts/PixelOperator-Bold.ttf")
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #000;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0;
+}
+
+canvas {
+  background: #000;
+  border: 1px solid white;
+  image-rendering: pixelated;
+
+  width: 512px;
+  height: 480px;
+}

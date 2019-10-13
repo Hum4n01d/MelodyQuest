@@ -1,0 +1,21 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "browserslist": "last 1 Chrome versions",
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@tonaljs/tonal": "^3.2.2",
+    "midi-freq": "^1.0.1",
+    "piu": "^1.0.0",
+    "pizzicato": "^0.6.4",
+    "teoria": "^2.5.0",
+    "tone": "^13.8.25"
+  }
+}
