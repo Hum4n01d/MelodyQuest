@@ -1,4 +1,11 @@
 # MelodyQuest
-Battle bosses with music!
+Battle with music theory!
 
-You need to connect a MIDI keyboard to your computer to play.
+Requirements:
+- A MIDI keyboard to your computer to play.
+
+Disclaimer:
+- This game was only tested on the latest version of Google Chrome
+- The game is unfinished
+
+Made at Hyphen-Hacks 2019!
